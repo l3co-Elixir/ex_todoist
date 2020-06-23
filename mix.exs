@@ -42,7 +42,6 @@ defmodule Todoist.MixProject do
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:ex_doc, "~> 0.21.0", only: :dev, runtime: false},
       {:mock, "~> 0.3.5"},
-      {:version_tasks, "~> 0.11.4"},
 
       # http dependencies
       {:tesla, "~> 1.3.0"},
