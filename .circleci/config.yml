@@ -13,8 +13,4 @@ jobs:
       - run: mix local.hex --force # install Hex locally (without prompt)
       - run: mix local.rebar --force # fetch a copy of rebar (without prompt)
       - run: mix deps.get
-      - run: git config --global user.email "l3co@outlook.com" 
-      - run: git config --global user.name "l3co"
       - run: mix test
-      - run: mix hex.user auth
-      - run: mix hex.publish
