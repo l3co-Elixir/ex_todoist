@@ -95,6 +95,28 @@ defmodule Todoist.Projects.ProjectServiceTest do
     end
   end
 
+  describe "delete todoist project" do
+    test "when has a project registred" do
+      with_mock HttpHelper,
+        exclude: fn _ ->
+          {:ok, %Tesla.Env{body: "project deleted"}}
+        end do
+        result = Service.delete_project(@project["id"])
+        assert {:ok, "Project deleted"} == result
+      end
+    end
+
+    test "when not has a project registred" do
+      with_mock HttpHelper,
+        exclude: fn _ ->
+          {:error, %Tesla.Env{body: nil}}
+        end do
+        result = Service.delete_project(@project["id"])
+        assert {:error, "Error to delete project id #{@project["id"]}"} == result
+      end
+    end
+  end
+
   describe "update project" do
     test "when project is registred" do
       with_mock HttpHelper,

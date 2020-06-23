@@ -20,6 +20,10 @@ defmodule HttpHelper do
     get(resource)
   end
 
+  def exclude(resource) do
+    delete(resource)
+  end
+
   def create(resource, data) do
     post(resource, data)
   end

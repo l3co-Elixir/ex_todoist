@@ -23,6 +23,13 @@ defmodule Todoist.Projects.ProjectService do
     end
   end
 
+  def delete_project(id) do
+    case Http.exclude("#{@resource}/#{id}") do
+      {:ok, _} -> {:ok, "Project deleted"}
+      {:error, _} -> {:error, "Error to delete project id #{id}"}
+    end
+  end
+
   def create(project) do
     case Http.create(@resource, project) do
       {:ok, response} ->
