@@ -1,4 +1,7 @@
-defmodule Todoist.Domain.Task do
+defmodule Todoist.Entities.Task do
+  @moduledoc """
+  Todoist.Entities.Task represent a entity task into Todoist workspace
+  """
 
   @derive Jason.Encoder
   defstruct content: nil,

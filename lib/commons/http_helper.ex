@@ -1,6 +1,8 @@
 defmodule HttpHelper do
   use Tesla
 
+  @moduledoc false
+
   plug(Tesla.Middleware.BaseUrl, Application.fetch_env!(:ex_todoist, :base_url))
 
   plug(Tesla.Middleware.Headers, [

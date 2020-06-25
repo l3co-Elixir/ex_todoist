@@ -4,7 +4,7 @@ defmodule Todoist.MixProject do
   def project do
     [
       app: :ex_todoist,
-      version: "1.0.0",
+      version: "1.0.2",
       elixir: "~> 1.10",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env() == :prod,
