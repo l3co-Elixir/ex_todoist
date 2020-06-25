@@ -3,12 +3,12 @@ defmodule HttpHelper do
 
   @moduledoc false
 
-  plug(Tesla.Middleware.BaseUrl, Application.fetch_env!(:ex_todoist, :base_url))
+  plug(Tesla.Middleware.BaseUrl, Application.get_env(:ex_todoist, :base_url))
 
   plug(Tesla.Middleware.Headers, [
     {
       "authorization",
-      "Bearer #{Application.fetch_env!(:ex_todoist, :token)}"
+      "Bearer #{Application.get_env(:ex_todoist, :token)}"
     },
     {
       "X-Request-Id",
