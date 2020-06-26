@@ -10,7 +10,7 @@ This project is a wrapper to Todoist API.
 ### Support
 
 - [X] Projects
-- [] Tasks
+- [X] Tasks
 - [] Labels
 - [] Colors
 
@@ -49,6 +49,16 @@ def deps do
     {:todoist, "~> 1.0.0"}
   ]
 end
+```
+
+After add this dependency in your module you need to put configuration
+
+**config/config.exs**
+
+```elixir
+config :ex_todoist,
+  base_url: System.get_env("TODOIST_URL", "https://api.todoist.com/rest/v1/"),
+  token: System.get_env("TODOIST_TOKEN")
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
